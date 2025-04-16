@@ -10,5 +10,8 @@ RUN pip3 install PyYAML --break-system-packages
 COPY feed.py /usr/bin/feed.py
 
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+RUN dos2unix /entrypoint.sh
+
 
 ENTRYPOINT ["/entrypoint.sh"]
